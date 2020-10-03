@@ -10,4 +10,34 @@ class ObukeController extends Controller
     {
         echo json_encode(['a' => $date]);
     }
+
+    public function show($date)
+    {
+        echo json_encode(['a' => $date]);
+    }
+
+    public function create($date)
+    {
+        echo json_encode(['a' => $date]);
+    }
+
+    public function edit($date)
+    {
+        echo json_encode(['a' => $date]);
+    }
+
+    public function update($date)
+    {
+        echo json_encode(['a' => $date]);
+    }
+
+    public function store($date)
+    {
+        echo json_encode(['a' => $date]);
+    }
+
+    public function delete($date)
+    {
+        echo json_encode(['a' => $date]);
+    }
 }
