@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ObukeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 Route::get('/obuke', function () {
     return view('obuke');
 });
+
+Route::get('/obuke/{date}', [ObukeController::class, 'index'])->name('lista');
