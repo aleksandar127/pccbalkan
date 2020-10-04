@@ -1,0 +1,33 @@
+.row {
+    margin-top: 20px;
+    color: #39b54a;
+}
+
+body {
+    background-color: #3a473d;
+}
+
+#tabela {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+tr,
+td,
+tbody,
+thead,
+th {
+    border: 2px solid black;
+    color: #39b54a;
+    text-align: center;
+}
+
+input,
+select {
+    background-color: #6e9677;
+}
+
+button {
+    background-color: #02f733;
+}

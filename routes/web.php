@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/obuke', function () {
-    return view('obuke');
-});
-
-Route::get('/obuke/{date}', [ObukeController::class, 'index'])->name('lista');
+Route::get('/', [ObukeController::class, 'index']);
+Route::get('/obuke', [ObukeController::class, 'index'])->name('lista');
+Route::post('/obuke', [ObukeController::class, 'store'])->name('store');
+Route::get('/obuke/{id}/edit', [ObukeController::class, 'edit'])->name('edit');
+Route::delete('/obuke/{id}', [ObukeController::class, 'delete'])->name('delete');
+Route::put('/obuke/{id}', [ObukeController::class, 'update'])->name('update');
+Route::get('/obuke/ajax', [ObukeController::class, 'ajax'])->name('ajax');
