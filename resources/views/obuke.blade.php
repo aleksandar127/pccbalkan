@@ -144,12 +144,18 @@
     </table>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
 <script>
     const godina = document.getElementById("godina");
     godina.addEventListener("change", getMessage);
 
     function getMessage() {
+        $.ajaxSetup({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
+        });
+
         const url = "<?php echo route('ajax'); ?>";
         $.ajax({
             type: "GET",
@@ -192,17 +198,17 @@
                     tr.append(td7);
                     let td8 = document.createElement("td");
                     td8.innerHTML = `
-                    <form action="{{ route('edit', ['id'=>$obuka->id]) }}" method="get">
-                    <button type="submit">Izmeni</button><?php echo csrf_field() ?>
-                    </form>`;
+                <form action="{{ route('edit', ['id'=>$obuka->id??' ']) }}" method="get">
+                <button type="submit">Izmeni</button><?php echo csrf_field() ?>
+                </form>`;
                     tr.append(td8);
                     let td9 = document.createElement("td");
                     td9.innerHTML = `
-                    <form action="<?php echo route('delete', ['id' => $obuka->id]) ?>" method="POST">
-                    <?php echo  method_field('DELETE') ?>
-                    <?php echo csrf_field() ?>
-                    <button type="submit">Izbrisi</button>
-                </form>`;
+                <form action="<?php echo route('delete', ['id' => $obuka->id ?? ' ']) ?>" method="POST">
+                <?php echo  method_field('DELETE') ?>
+                <?php echo csrf_field() ?>
+                <button type="submit">Izbrisi</button>
+            </form>`;
                     tr.append(td9);
                     tableBody.append(tr);
                 }

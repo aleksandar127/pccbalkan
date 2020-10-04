@@ -15,7 +15,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <title>Laravel</title>
+    <title>PCC</title>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -23,6 +25,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
+
 
 
 </head>

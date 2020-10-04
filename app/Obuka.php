@@ -9,5 +9,6 @@ class Obuka extends Model
     protected $table = 'obuke';
 
     protected $guarded = [];
+
     public $timestamps = false;
 }

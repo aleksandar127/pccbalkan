@@ -9,23 +9,14 @@ use Illuminate\Support\Facades\DB;
 class ObukeController extends Controller
 {
 
-    protected $guarded = [];
 
     public function index(Request $request)
     {
 
-        $lista = Obuka::all()->sortBy('termin', true);
+        $lista = Obuka::orderBy('termin', 'desc')->get();
         return view('obuke', ['lista' => $lista]);
     }
 
-    public function show(Request $request, $id)
-    {
-        $obuka = Obuka::findOrFail($id);
-    }
-
-    public function create()
-    {
-    }
 
     public function edit(Request $request, $id)
     {

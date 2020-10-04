@@ -5,6 +5,7 @@
 
 body {
     background-color: #3a473d;
+    margin: 20px;
 }
 
 #tabela {
@@ -21,6 +22,15 @@ th {
     border: 2px solid black;
     color: #39b54a;
     text-align: center;
+    background-color: #272e27;
+}
+td,
+th {
+    width: 10%;
+}
+
+th {
+    height: 2em;
 }
 
 input,
